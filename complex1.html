@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ar=document.getElementById('ar').value;
+       let arr=createArray(ar);
+        function createArray(n) {
+            let result = [];
+            for (let i = 1; i <= n; i++) {
+                result.push(i);
+            }
+            return result;
+        }
+        function display(){
+            let ar = document.getElementById('ar').value;
+            let arr = createArray(parseInt(ar));
+          
+            document.getElementById('product').innerHTML=arr;
+        }
+       function summ(){
+        let ar = document.getElementById('ar').value;
+            let arr = createArray(parseInt(ar));
+           const ssum=arr.reduce((prv,curr)=>{
+            return prv+curr;
+           })
+           document.getElementById('product').innerHTML=ssum;
+       }
+       function pro(){
+        let ar = document.getElementById('ar').value;
+            let arr = createArray(parseInt(ar));
+        const Prod=arr.reduce((prv,curr)=>
+        {
+            return prv*curr;
+        })
+        document.getElementById('product').innerHTML=Prod;
+       }
+
+    </script>
+    <form action="">
+    <input type="text" id="ar" placeholder="">
+    <button type="button" onclick="summ()">Sum</button>
+    <button type="button" onclick="pro()">Product</button>
+    <button type="button" onclick="display()">Display</button>
+  
+</form>
+<div id="product"></div>
+
+</body>
+</html>
